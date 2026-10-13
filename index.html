@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f7f0eb">
+<title>A little date for Chen Chen ♡</title>
+<style>
+:root{--cream:#f7f0eb;--rose:#d8a6a0;--ink:#55413f;--muted:#927a76;--paper:#fffaf6}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,'Times New Roman',serif;overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+.wrap{width:min(100%,520px);margin:auto;padding:0 22px}
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:42px 0 60px;overflow:hidden;background:radial-gradient(ellipse at 50% 15%,#fffaf7 0%,#f7f0eb 56%,#f1e4df 100%)}
+.eyebrow{font:10px/1.6 Arial,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+h1{font-weight:400;font-size:clamp(42px,12vw,64px);line-height:1.03;letter-spacing:-.045em;margin:18px 0}
+h1 em{font-weight:400;color:#b9797d}
+.sub{font-size:16px;line-height:1.8;color:#876f6c;max-width:310px;margin:0 auto}
+.flower{font-size:36px;display:block;margin:24px auto 18px;animation:float 4s ease-in-out infinite}
+.btn{border:0;border-radius:99px;padding:15px 23px;background:var(--ink);color:#fff9f5;font:11px Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;box-shadow:0 8px 22px #6b4c3d1c;transition:transform .25s,background .25s}
+.btn:active{transform:scale(.97)}
+.btn.secondary{background:transparent;color:var(--ink);border:1px solid #c9aaa3;box-shadow:none}
+.hero .btn{margin-top:30px}
+.scroll{position:absolute;bottom:22px;left:0;right:0;font:9px Arial,sans-serif;letter-spacing:.22em;color:#a48d86;text-transform:uppercase}
+.sparkle{position:absolute;color:#d4a29d;opacity:.6;animation:twinkle 3s ease-in-out infinite}
+.s1{top:13%;left:12%;font-size:20px}.s2{top:26%;right:11%;font-size:14px;animation-delay:1s}.s3{bottom:22%;left:17%;font-size:13px;animation-delay:1.7s}.s4{bottom:30%;right:13%;font-size:20px;animation-delay:.6s}
+section{padding:82px 0}
+.section-label{text-align:center;font:10px Arial,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#a07c77}
+h2{font-weight:400;text-align:center;font-size:clamp(30px,8vw,43px);line-height:1.13;margin:15px 0 18px;letter-spacing:-.035em}
+.copy{text-align:center;font-size:15px;line-height:1.9;color:#856f6b;max-width:360px;margin:0 auto}
+.photo-frame{margin:32px auto 0;padding:10px;background:#fffaf6;box-shadow:0 14px 35px #73534b16;transform:rotate(-1.3deg);max-width:370px}
+.photo-frame img{display:block;width:100%;height:370px;object-fit:cover;background:#eadbd4}
+.caption{text-align:center;font-style:italic;font-size:13px;color:#a08079;margin:12px 0 4px}
+.memory{background:#f0e2dd}
+.memory-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:28px auto 0;max-width:390px}
+.memory-card{background:#fff8f4;padding:8px 8px 14px;box-shadow:0 8px 20px #72524c10}
+.memory-card:nth-child(2){transform:translateY(18px) rotate(2deg)}.memory-card:nth-child(1){transform:rotate(-2deg)}
+.memory-card img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:#eadbd4}
+.memory-card p{font-size:12px;text-align:center;margin:10px 0 0;color:#987a74;font-style:italic}
+.invite{text-align:center}
+.invite-card{background:var(--paper);padding:34px 22px;border:1px solid #ead7d0;box-shadow:0 15px 45px #79594d10;margin-top:28px}
+.invite-card h3{font-size:33px;font-weight:400;margin:8px 0 14px}
+.invite-card p{font-size:14px;line-height:1.8;color:#876f6c}
+.actions{display:flex;flex-direction:column;gap:11px;align-items:center;margin-top:25px}
+.actions .btn{width:min(100%,290px)}
+#reply{min-height:28px;margin-top:19px;font-size:14px;line-height:1.7;color:#a16d72;font-style:italic}
+.details{display:none;text-align:left;margin:20px auto 0;max-width:300px;border-top:1px solid #ead7d0;padding-top:17px}
+.details.show{display:block;animation:rise .6s ease both}
+.details label{display:block;font:10px Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#a07c77;margin:14px 0 6px}
+.details input,.details textarea{width:100%;border:1px solid #e4d1cb;background:#fffdfb;padding:12px;border-radius:8px;color:var(--ink);font:14px Georgia,serif}
+.details textarea{min-height:72px;resize:vertical}
+footer{text-align:center;padding:35px 20px 45px;font-size:12px;color:#a1847d}
+footer .heart{color:#bf8184}
+.fade{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}.fade.visible{opacity:1;transform:translateY(0)}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-9px) rotate(4deg)}}
+@keyframes twinkle{0%,100%{opacity:.25;transform:scale(.8)}50%{opacity:.85;transform:scale(1.15)}}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:600px){.hero{min-height:760px}.photo-frame img{height:430px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <span class="sparkle s1">✧</span><span class="sparkle s2">✦</span><span class="sparkle s3">✧</span><span class="sparkle s4">✦</span>
+  <div class="wrap">
+    <div class="eyebrow">a little something for you</div>
+    <span class="flower">𓆸</span>
+    <h1>For you,<br><em>Chen Chen.</em></h1>
+    <p class="sub">Some moments are ordinary.<br>Some people make them feel like a memory worth keeping.</p>
+    <button class="btn" onclick="document.querySelector('#note').scrollIntoView({behavior:'smooth'})">open your little note ↓</button>
+  </div>
+  <div class="scroll">made with a little extra love · ♡</div>
+</header>
+
+<main>
+<section id="note">
+  <div class="wrap fade">
+    <div class="section-label">just a little thought</div>
+    <h2>I’d like to make<br>another memory with you.</h2>
+    <p class="copy">Not a big, complicated plan. Just a lovely place, something good to eat, slow conversations, and time that feels a little softer because I get to spend it with you.</p>
+    <div class="photo-frame">
+      <!-- Replace this image URL with a photo of you two, if you want. -->
+      <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1000&q=85" alt="A tender, romantic moment" loading="lazy">
+      <div class="caption">a little moment, a little forever in the making</div>
+    </div>
+  </div>
+</section>
+
+<section class="memory">
+  <div class="wrap fade">
+    <div class="section-label">little things i love</div>
+    <h2>The moments<br>I'd keep in a jar.</h2>
+    <p class="copy">The little laughs, the unexpected conversations, and the way a normal day can turn into one I want to remember.</p>
+    <div class="memory-grid">
+      <div class="memory-card">
+        <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=700&q=85" alt="Soft golden evening light" loading="lazy">
+        <p>slow afternoons</p>
+      </div>
+      <div class="memory-card">
+        <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=700&q=85" alt="Friends sharing a happy moment" loading="lazy">
+        <p>laughing a little too much</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="invite" id="invite">
+  <div class="wrap fade">
+    <div class="section-label">so, here's my question</div>
+    <h2>Chen Chen,<br>can I take you on a date?</h2>
+    <p class="copy">Just us. Somewhere nice. No rush, no noise — just a little time together.</p>
+    <div class="invite-card">
+      <div style="font-size:25px;color:#c28d8d">♡</div>
+      <h3>A date with me?</h3>
+      <p>I'll take care of the plan.<br>You just have to bring yourself.</p>
+      <div class="actions">
+        <button class="btn" id="yesBtn">okay, let's make a memory ♡</button>
+        <button class="btn secondary" id="detailsBtn">tell me a little more</button>
+      </div>
+      <div id="reply" aria-live="polite"></div>
+      <div class="details" id="details">
+        <label for="date">When are you free?</label>
+        <input id="date" type="text" placeholder="e.g. Saturday evening">
+        <label for="place">Any place you have in mind?</label>
+        <input id="place" type="text" placeholder="somewhere cozy, maybe?">
+        <label for="message">A little note for me (optional)</label>
+        <textarea id="message" placeholder="Anything you want to tell me..."></textarea>
+        <button class="btn" style="width:100%;margin-top:14px" id="sendBtn">send your answer ♡</button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer>made for Chen Chen, with <span class="heart">♥</span> and a little courage</footer>
+<script>
+const yesBtn=document.getElementById('yesBtn');
+const detailsBtn=document.getElementById('detailsBtn');
+const details=document.getElementById('details');
+const reply=document.getElementById('reply');
+yesBtn.addEventListener('click',()=>{
+  details.classList.add('show');
+  reply.textContent="you just made me smile. ♡ let's plan our little date.";
+  details.scrollIntoView({behavior:'smooth',block:'center'});
+  confettiHearts();
+});
+detailsBtn.addEventListener('click',()=>{
+  details.classList.toggle('show');
+  detailsBtn.textContent=details.classList.contains('show')?'hide the details':'tell me a little more';
+  if(details.classList.contains('show')) details.scrollIntoView({behavior:'smooth',block:'center'});
+});
+document.getElementById('sendBtn').addEventListener('click',()=>{
+  const date=document.getElementById('date').value.trim();
+  const place=document.getElementById('place').value.trim();
+  const message=document.getElementById('message').value.trim();
+  const text=`Hi, I saw your date invitation ♡%0AWhen I'm free: ${encodeURIComponent(date||'let’s decide together')}%0APlace idea: ${encodeURIComponent(place||'surprise me')}%0AMy note: ${encodeURIComponent(message||'♡')}`;
+  // Replace the number below with your WhatsApp number, including country code, digits only.
+  const whatsappNumber='6281234567890';
+  if(whatsappNumber==='6281234567890'){
+    reply.textContent="Almost there! The WhatsApp number is still a sample. Ask the sender to add their number to the website first. ♡";
+  } else {
+    window.open(`https://wa.me/${whatsappNumber}?text=${text}`,'_blank','noopener');
+  }
+});
+function confettiHearts(){
+  const symbols=['♡','✧','♥','✦'];
+  for(let i=0;i<18;i++){
+    const el=document.createElement('span');el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    Object.assign(el.style,{position:'fixed',left:(Math.random()*90+5)+'vw',top:'70vh',zIndex:99,pointerEvents:'none',color:['#c28d8d','#b18caa','#d4aa8e'][i%3],fontSize:(14+Math.random()*15)+'px',transition:'transform 1.8s ease,opacity 1.8s ease'});
+    document.body.appendChild(el);
+    requestAnimationFrame(()=>{el.style.transform=`translateY(-${120+Math.random()*240}px) rotate(${Math.random()*100-50}deg)`;el.style.opacity='0'});
+    setTimeout(()=>el.remove(),1900);
+  }
+}
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
